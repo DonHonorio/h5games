@@ -1,8 +1,9 @@
 import type { Metadata } from "next";
-import { Inter } from "next/font/google";
+import { Lexend } from "next/font/google";
+import Navbar from "@/components/ui/navbar";
 import "./globals.css";
 
-const inter = Inter({ subsets: ["latin"] });
+const lexend = Lexend({ subsets: ["latin"] });
 
 export const metadata: Metadata = {
   title: "H5 games",
@@ -16,7 +17,10 @@ export default function RootLayout({
 }>) {
   return (
     <html lang="en">
-      <body className={inter.className}>{children}</body>
+      <body className={lexend.className}>
+        <Navbar />
+        {children}
+      </body>
     </html>
   );
 }
